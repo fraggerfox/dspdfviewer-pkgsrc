@@ -2,17 +2,18 @@
 
 VERSION=        1.15.1
 GITHUB_PROJECT=	dspdfviewer
+GITHUB_ACCOUNT=	dannyedel
+GITHUB_TAG=	v${VERSION}
 DISTNAME=	${GITHUB_PROJECT}-${VERSION}
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_GITHUB:=dannyedel/}
-GITHUB_TAG=	v1.15.1
+MASTER_SITES=	${MASTER_SITE_GITHUB:=${GITHUB_ACCOUNT}/}
 
 MAINTAINER=	santhosh.raju@gmail.com
 HOMEPAGE=	http://dspdfviewer.danny-edel.de/
 COMMENT=	Dual-Screen PDF Viewer for latex-beamer
 LICENSE=	gnu-gpl-v2
 
-WRKSRC=		${WRKDIR}/dspdfviewer-1.15.1
+WRKSRC=		${WRKDIR}/${DISTNAME}
 CONFIGURE_DIR=	${WRKSRC}/build
 BUILD_DIRS= 	build
 
