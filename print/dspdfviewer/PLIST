@@ -1,0 +1,4 @@
+@comment $NetBSD$
+bin/dspdfviewer
+share/applications/dspdfviewer.desktop
+share/man/man1/dspdfviewer.1
