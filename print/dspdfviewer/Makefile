@@ -1,21 +1,23 @@
 # $NetBSD$
 
-VERSION=        1.15.1
-GITHUB_PROJECT=	dspdfviewer
-GITHUB_ACCOUNT=	dannyedel
-GITHUB_TAG=	v${VERSION}
 DISTNAME=	${GITHUB_PROJECT}-${VERSION}
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_GITHUB:=${GITHUB_ACCOUNT}/}
 
 MAINTAINER=	santhosh.raju@gmail.com
 HOMEPAGE=	http://dspdfviewer.danny-edel.de/
 COMMENT=	Dual-Screen PDF Viewer for latex-beamer
 LICENSE=	gnu-gpl-v2
 
+VERSION=	1.15.1
+GITHUB_PROJECT=	dspdfviewer
+GITHUB_ACCOUNT=	dannyedel
+GITHUB_TAG=	v${VERSION}
+CATEGORIES=	print
+MASTER_SITES=	${MASTER_SITE_GITHUB:=${GITHUB_ACCOUNT}/}
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 CONFIGURE_DIR=	${WRKSRC}/build
-BUILD_DIRS= 	build
+BUILD_DIRS=	build
 
 USE_LANGUAGES=	c c++
 USE_TOOLS+=	cmake pkg-config
@@ -27,8 +29,6 @@ BUILD_MAKE_FLAGS+= VERBOSE=1
 DEPENDS+=	boost-libs>=1.63.0:../../devel/boost-libs
 DEPENDS+=	poppler-qt5>=0.50.0:../../print/poppler-qt5
 DEPENDS+=	qt5-qttools>=5.5.1:../../x11/qt5-qttools
-
-INSTALL_MAN_DIR=	share/
 
 pre-configure:
 	mkdir -p ${WRKSRC}/build
