@@ -23,6 +23,9 @@ Once you have copied the folder, install it as you would do for any port.
 
 For a list of dependencies for the build check [here][2]
 
+NOTE: If you are using pkgsrc in a non NetBSD system, replace `make` with
+`bmake` in the above example.
+
 Credits
 -------
 
