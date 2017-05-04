@@ -1,21 +1,18 @@
 # $NetBSD$
 
-DISTNAME=	${GITHUB_PROJECT}-${VERSION}
+DISTNAME=	dspdfviewer-1.15.1
 CATEGORIES=	print
+MASTER_SITES=	${MASTER_SITE_GITHUB:=dannyedel/}
 
 MAINTAINER=	santhosh.raju@gmail.com
 HOMEPAGE=	http://dspdfviewer.danny-edel.de/
 COMMENT=	Dual-Screen PDF Viewer for latex-beamer
 LICENSE=	gnu-gpl-v2
 
-VERSION=	1.15.1
-GITHUB_PROJECT=	dspdfviewer
-GITHUB_ACCOUNT=	dannyedel
 GITHUB_TAG=	v${VERSION}
-MASTER_SITES=	${MASTER_SITE_GITHUB:=${GITHUB_ACCOUNT}/}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
-CONFIGURE_DIR=	${WRKSRC}/build
+CONFIGURE_DIRS=	build
 BUILD_DIRS=	build
 
 USE_LANGUAGES=	c c++
@@ -25,15 +22,16 @@ CMAKE_ARGS+=	-DBuildTests=OFF
 CMAKE_ARG_PATH=	${WRKSRC}/build
 BUILD_MAKE_FLAGS+= VERBOSE=1
 
-DEPENDS+=	boost-libs>=1.63.0:../../devel/boost-libs
-DEPENDS+=	poppler-qt5>=0.50.0:../../print/poppler-qt5
 DEPENDS+=	qt5-qttools>=5.5.1:../../x11/qt5-qttools
+
+BUILDLINK_API_DEPENDS.boost-libs+=	boost-libs>=1.63
+BUILDLINK_API_DEPENDS.poppler-qt5+=	poppler-qt5>=0.50.0
 
 pre-configure:
 	mkdir -p ${WRKSRC}/build
 
 do-configure:
-	cd ${CONFIGURE_DIR} && cmake .. ${CMAKE_ARGS}
+	cd ${WRKSRC}/build && cmake .. ${CMAKE_ARGS}
 
 .include "../../devel/boost-libs/buildlink3.mk"
 .include "../../x11/qt5-qtbase/buildlink3.mk"
