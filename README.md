@@ -32,6 +32,8 @@ Credits
 * The Dual-Screen PDF Viewer was originally written by [Danny Edel][3]
 * Thanks to `trouble` and `cherry` for a machine to do and help with the package
   development as well as testing and fixing of the package.
+* Thanks to `wiz` for reviewing and suggesting fixes / changes to conform to
+  standardized `Makefile`.
 
 License
 -------
