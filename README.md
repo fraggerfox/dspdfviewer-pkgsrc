@@ -16,7 +16,7 @@ place.
 Usage
 -----
 
-Once you have copied the folder, install it as you would do for any port.
+Once you have copied the folder, install it as you would do for any package.
 
 `$ cd /usr/pkgsrc/print/dispdfviewer`<br>
 `$ make install clean`
