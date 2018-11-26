@@ -1,7 +1,7 @@
 dspdfviewer-pkgsrc
 ==================
 
-NetBSD pkgsrc script for dspdfviewer
+NetBSD [pkgsrc][4] script for dspdfviewer
 
 You can find dspdfviewer [here][1]
 
@@ -43,3 +43,4 @@ BSD 2-clause. See LICENSE.
 [1]: http://dspdfviewer.danny-edel.de/
 [2]: http://dspdfviewer.danny-edel.de/installation/source/options.html
 [3]: https://github.com/dannyedel
+[4]: http://pkgsrc.se/print/dspdfviewer
