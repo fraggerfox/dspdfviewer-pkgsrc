@@ -1,10 +1,11 @@
-# $NetBSD: Makefile,v 1.2 2018/12/03 08:35:31 wiz Exp $
+# $NetBSD: Makefile,v 1.4 2018/12/13 19:52:19 adam Exp $
 
 DISTNAME=	dspdfviewer-1.15.1
-PKGREVISION=	1
+PKGREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GITHUB:=dannyedel/}
 GITHUB_TAG=	v${PKGVERSION_NOREV}
+EXTRACT_USING=	bsdtar
 
 MAINTAINER=	fox@NetBSD.org
 HOMEPAGE=	http://dspdfviewer.danny-edel.de/
@@ -14,7 +15,7 @@ LICENSE=	gnu-gpl-v2
 DEPENDS+=	qt5-qttools>=5.5.1:../../x11/qt5-qttools
 
 USE_LANGUAGES=		c c++
-USE_TOOLS+=		pkg-config
+USE_TOOLS+=		pkg-config bsdtar
 USE_CMAKE=		yes
 CMAKE_ARGS+=		-DBuildTests=OFF
 CONFIGURE_DIRS=		build
