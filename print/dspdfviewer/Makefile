@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.46 2023/01/29 21:17:35 ryoon Exp $
+# $NetBSD: Makefile,v 1.65 2024/10/04 03:49:34 ryoon Exp $
 
 DISTNAME=	dspdfviewer-1.15.1
-PKGREVISION=	43
+PKGREVISION=	61
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GITHUB:=dannyedel/}
 GITHUB_TAG=	v${PKGVERSION_NOREV}
@@ -16,7 +16,7 @@ DEPENDS+=	qt5-qttools>=5.5.1:../../x11/qt5-qttools
 USE_LANGUAGES=		c c++
 USE_TOOLS+=		pkg-config
 USE_CMAKE=		yes
-CMAKE_ARGS+=		-DBuildTests=OFF
+CMAKE_CONFIGURE_ARGS+=		-DBuildTests=OFF
 CONFIGURE_DIRS=		build
 CMAKE_ARG_PATH=		..
 BUILD_MAKE_FLAGS+=	VERBOSE=1
